@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="PanelTop3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #255;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="umg.edu.controller.MainController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="124.0" style="-fx-background-color: #669999;">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="19.0" prefHeight="371.0" prefWidth="124.0" style="-fx-background-color: #669999;">
+               <children>
+                  <Label prefHeight="45.0" prefWidth="125.0" text="Cuestionario App">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button id="BtnActivar" fx:id="btnActivar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="25.0" prefWidth="89.0" text="Activar">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="BtnClonar" fx:id="btnClonar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="25.0" prefWidth="88.0" text="Clonar">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="BtnEvalular" fx:id="btnEvaluar" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="25.0" prefWidth="89.0" text="Evaluar">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button id="BtnTop3" fx:id="btnTop3" mnemonicParsing="false" onAction="#onClickMenu" prefHeight="25.0" prefWidth="89.0" text="Top3">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnAgregarCuestionario" mnemonicParsing="false" onAction="#onClickMenu" text="+">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="120.0" pickOnBounds="false" style="-fx-background-color: #85929E;">
+               <children>
+                  <Pane prefHeight="400.0" prefWidth="478.0" style="-fx-background-color: #1B4F72;" />
+                  <TableView fx:id="tvCuestionarioPri" style="-fx-background-color: #FAD7A0;">
+                    <columns>
+                      <TableColumn fx:id="tcPin" prefWidth="75.0" text="Pin" />
+                      <TableColumn fx:id="tcNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="tcDescripcion" prefWidth="75.0" text="Descripción" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <Pane fx:id="panelTop3" layoutX="124.0" prefHeight="400.0" prefWidth="478.0" style="-fx-background-color: #CE93D8;">
+         <children>
+            <Label text="Top3" />
+         </children></Pane>
+      <Pane fx:id="panelEvaluar" layoutX="124.0" prefHeight="400.0" prefWidth="478.0" style="-fx-background-color: #F5B7B1;">
+         <children>
+            <Label text="Evaluar" />
+         </children></Pane>
+      <Pane fx:id="panelAgregar" layoutX="122.0" layoutY="-1.0" prefHeight="400.0" prefWidth="478.0">
+         <children>
+            <Label layoutX="64.0" layoutY="93.0" text="Titulo" />
+            <Label layoutX="63.0" layoutY="127.0" text="Descripción" />
+            <TextField fx:id="txtTitulo" layoutX="195.0" layoutY="89.0" />
+            <TextField fx:id="txtDescripcion" layoutX="195.0" layoutY="123.0" />
+            <Button layoutX="99.0" layoutY="185.0" mnemonicParsing="false" text="Cancelar" />
+            <Button layoutX="245.0" layoutY="185.0" mnemonicParsing="false" onAction="#onClickCuestionaPri" text="Siguiente" />
+         </children>
+      </Pane>
+      <Pane layoutX="122.0" prefHeight="400.0" prefWidth="478.0" style="-fx-background-color: #CB4335;">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutX="9.0" layoutY="153.0" prefHeight="142.0" prefWidth="88.0">
+               <children>
+                        <Button mnemonicParsing="false" onAction="#onClickModificar" text="Modificar">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onClickBorrar" prefHeight="25.0" prefWidth="68.0" text="Borrar">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#onClickPreguntas" text="Agregar" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <TextField fx:id="txtPregunta" layoutX="239.0" layoutY="24.0" />
+            <TextField fx:id="txtRespuesta" layoutX="239.0" layoutY="66.0" />
+            <Label layoutX="102.0" layoutY="23.0" prefHeight="25.0" prefWidth="78.0" text="Pregunta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="97.0" layoutY="66.0" prefHeight="25.0" prefWidth="88.0" text="Respuesta">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tvPreguntasIng" layoutX="97.0" layoutY="153.0" prefHeight="200.0" prefWidth="305.0">
+              <columns>
+                  <TableColumn fx:id="tcID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="tcPregunta" prefWidth="75.0" text="Pregunta" />
+                <TableColumn fx:id="tcRespuesta" prefWidth="75.0" text="Respuesta" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
