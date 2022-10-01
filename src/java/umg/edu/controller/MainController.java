@@ -13,7 +13,7 @@ import umg.edu.model.CuestionarioPrincipal;
 import umg.edu.model.Preguntas;
 import umg.edu.utils.Variables;
 //Cristian Alejandro Melgar Ordoñez 7690 21 8342
-//
+//Proyecto 2
 public class MainController {
      @FXML
      Button btnActivar;
