@@ -1,5 +1,5 @@
 package umg.edu.model;
-
+//
 public class CuestionarioPrincipal  {
     private static int correlativo=1;
     private int pin;
