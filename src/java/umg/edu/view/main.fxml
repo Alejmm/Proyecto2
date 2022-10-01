@@ -114,7 +114,7 @@
                   <Font name="Arial" size="16.0" />
                </font>
             </Label>
-            <TableView fx:id="tvPreguntasIng" layoutX="97.0" layoutY="153.0" prefHeight="200.0" prefWidth="305.0">
+            <TableView fx:id="tvPreguntasIng" layoutX="97.0" layoutY="153.0" onMouseClicked="#seleccionar" prefHeight="200.0" prefWidth="305.0">
               <columns>
                   <TableColumn fx:id="tcID" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="tcPregunta" prefWidth="75.0" text="Pregunta" />

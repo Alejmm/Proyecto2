@@ -1,13 +1,11 @@
 package umg.edu.controller;
 
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -17,10 +15,10 @@ import umg.edu.utils.Variables;
 
 
 public class MainController {
-    // @FXML
-   // Button btnActivar;
-    //@FXML
-    //Button btnClonar;
+     @FXML
+     Button btnActivar;
+    @FXML
+    Button btnClonar;
     @FXML
     Button btnEvaluar;
     @FXML
@@ -40,12 +38,12 @@ public class MainController {
     @FXML
     TableView tvCuestionarioPri;
     @FXML
-    TableView tcPin;
+    TableColumn tcPin;
 
     @FXML
-    TableView tcNombre;
+    TableColumn tcNombre;
     @FXML
-    TableView tcDescripcion;
+    TableColumn tcDescripcion;
     @FXML
     TextField txtPregunta;
     @FXML
@@ -54,13 +52,13 @@ public class MainController {
     @FXML
     TableView tvPreguntasIng;
     @FXML
-    TableView tcPregunta;
+    TableColumn tcPregunta;
 
     @FXML
-    TableView tcRespuesta;
+    TableColumn tcRespuesta;
 
     @FXML
-    TableView tcID;
+    TableColumn tcID;
 
     @FXML
     private ObservableList<Preguntas> preguntas;
@@ -69,12 +67,16 @@ public class MainController {
     public MainController() {
     }
     public void initialize(){
+
         tcPin.setCellValueFactory(new PropertyValueFactory<CuestionarioPrincipal, Integer>("pin"));
         tcNombre.setCellValueFactory(new PropertyValueFactory<CuestionarioPrincipal, String >("titul"));
         tcDescripcion.setCellValueFactory(new PropertyValueFactory<CuestionarioPrincipal, String >("descrip"));
         ObservableList<CuestionarioPrincipal> data = FXCollections.observableArrayList(Variables.vaCuestionario);
         tvCuestionarioPri.setItems(data);
     }
+
+
+
 
 
     public void onClickMenu (ActionEvent actionEvent) {
@@ -101,7 +103,7 @@ public class MainController {
         txtDescripcion.setText("");
 
         ObservableList<CuestionarioPrincipal> data = FXCollections.observableArrayList(Variables.vaCuestionario);
-        tvCuestionarioPri.setItems(data);
+        tvCuestionarioPri.setItems( data );
     }
     //método para la creación de pdf, no encontre que librerías poder utilizar, busque en internet pero no encontre la forma de poderlo inplementar por completo
 
@@ -141,8 +143,8 @@ public class MainController {
         ObservableList<Preguntas> data = FXCollections.observableArrayList(Variables.vaPreguntas);
         tvPreguntasIng.setItems(data);
     }
-
-    private void seleccionar(MouseEvent event) {
+    @FXML
+    private void seleccionar( MouseEvent event) {
 
         // Se obtiene la pregunta seleccionada
         Preguntas p = (Preguntas) this.tvPreguntasIng.getSelectionModel().getSelectedItem();
@@ -157,7 +159,7 @@ public class MainController {
     }
 
     @FXML
-    private void onClickModificar(ActionEvent event) {
+    private void onClickModificar(ActionEvent actionEvent) {
 
         // Se obtiene la pregunta seleccionada
         Preguntas p = (Preguntas) this.tvPreguntasIng.getSelectionModel().getSelectedItem();
@@ -219,7 +221,7 @@ public class MainController {
     }
 
     @FXML
-    private void onClickBorrar(ActionEvent event) {
+    private void onClickBorrar(ActionEvent actionEvent) {
 
         // Se obtiene la pregunta seleccionada
         Preguntas p = (Preguntas) this.tvPreguntasIng.getSelectionModel().getSelectedItem();
