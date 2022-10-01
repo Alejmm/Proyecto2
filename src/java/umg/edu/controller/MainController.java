@@ -12,7 +12,7 @@ import javafx.scene.layout.Pane;
 import umg.edu.model.CuestionarioPrincipal;
 import umg.edu.model.Preguntas;
 import umg.edu.utils.Variables;
-//Cristian Alejandro Melgar Ordoñez 7690 21 8342 
+//Cristian Alejandro Melgar Ordoñez 7690 21 8342
 
 public class MainController {
      @FXML
